@@ -1,9 +1,19 @@
-### Using the postman newman Docker image:
+This is how you can used the Postman docker container to run you Postman collections
+
+### Using the Docker image:
 
 ```bash
-docker run --rm -v /c/Users/daniel.dainton/test-postman/src:/etc/newman postman/newman_alpine33:latest run Insights_API_Smoke_Check.json -e environments/Staging_TestR_Environment.json
+docker-compose build
 ```
 
+```bash
+docker-compose up
 ```
-docker run --rm -t postman/newman_alpine33 run https://www.getpostman.com/collections/c9b9a17ea803fd714ec3
-```
+
+### Output from the command line
+
+<run from the Command line>
+
+### Added the Test Run Report
+
+<Images / gifs>
