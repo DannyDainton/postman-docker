@@ -3,6 +3,7 @@ services:
   postman_checks:
       container_name: restful_booker_checks
       build: .
+      image: postman_checks
       command:
         run Restful_Booker_Collection.json 
         -e environments/Restful_Booker_Environment.json 
