@@ -20,7 +20,7 @@ docker run -t postman/newman_alpine33 run https://www.getpostman.com/collections
 
 This command will run a basic collection that sends a few requests to [httpbin](http://httpbin.org) and performs some checks. This example is used to show you the collection running using the Docker Image and what the output is in the terminal.
 
-![Postman Offical Docker Image Example](./public/Postman_Offical_Docker_Image.PNG)
+![Postman Offical Docker Image Example](./public/Postman_Offical_Docker_Image.png)
 
 ---
 
