@@ -1,5 +1,8 @@
 # Postman Docker
 
+
+
+
 I wanted to create an example based repository for anyone to get an idea of how to start using your Postman Collections, created in the application running using a Docker image. 
 
 Postman has it's own official Docker image on Dockerhub with instructions to get you set up and started. It's really _simple_ to get your Postman collections with the image, straight from the command line.
@@ -15,9 +18,43 @@ This is a basic collection that sends a few requests to [httpbin](http://httpbin
 
 ---
 
-### What's in this repo?
+### What have i done differently?
 
-I've created a couple of things that help make my life slightly easier, a `Dockerfile` and a `docker-compose.yml` file. These files are orchestrating the the whole thing for me.   
+
+A `Dockerfile`:
+
+```
+FROM node:8.12.0-alpine
+
+RUN npm install -g newman
+RUN npm install -g newman-reporter-html
+
+WORKDIR /etc/newman
+
+ENTRYPOINT ["newman"]
+```
+
+A `docker-compose.yml` file:
+
+```yml
+version: "2"
+services:
+  postman_checks:
+      container_name: restful_booker_checks
+      build: .
+      image: postman_checks
+      command:
+        run Restful_Booker_Collection.json 
+        -e environments/Restful_Booker_Environment.json 
+        -r html,cli 
+        --reporter-html-export reports/Restful_Booker_Test_Run.html 
+        --reporter-html-template reports/templates/customTemplate.html
+      volumes:
+        - ./src:/etc/newman
+```
+
+
+
 
 ### Running the checks:
 
@@ -34,16 +71,14 @@ docker-compose rm -f
 
 <run from the Command line>
 
-### Added the Test Run Report
+### Test Run Reports
 
-<Images / gifs>
+The `newman-html-reporter` has a standard output which is fine but it looks a bit boring...
 
-```yml
-  postman_checks_native:
-      image: postman/newman_alpine33
-      command:
-        run Restful_Booker_Collection.json 
-        -e environments/Restful_Booker_Environment.json 
-      volumes:
-        - ./src:/etc/newman
-```
+![Default Report](./public/Default_Report.PNG)
+
+
+
+Using a template that can be customised to suit your needs.....
+
+![Custom Report](./public/Custom_Reports.gif)
