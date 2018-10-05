@@ -9,6 +9,6 @@ services:
         -e environments/Restful_Booker_Environment.json 
         -r html,cli 
         --reporter-html-export reports/Restful_Booker_Test_Run.html 
-        --reporter-html-template reports/templates/customTemplate.html
+        --reporter-html-template reports/templates/customTemplate.hbs
       volumes:
         - ./src:/etc/newman

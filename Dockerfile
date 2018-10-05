@@ -1,7 +1,6 @@
-FROM node:8.12.0-alpine
+FROM node:10.11.0-alpine
 
-RUN npm install -g newman
-RUN npm install -g newman-reporter-html
+RUN npm install -g newman newman-reporter-html
 
 WORKDIR /etc/newman
 
