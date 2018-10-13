@@ -101,6 +101,17 @@ I've added a couple more custom template examples in the `./reports` dir that I'
 * [MarcosEllys' repo](https://github.com/MarcosEllys/awesome-newman-html-template)
 * [felixdjost's repo](https://github.com/felixdjost/newman-html-report-template-verbose)
 
+An example of each of the awesome templates from the repo's listed above:
+
+#### Custom Template 1
+![Custom Template 1](./public/customTemplate_1.PNG)
+
+#### Custom Template 2
+![Custom Template 2](./public/customTemplate_2.PNG)
+
+#### Custom Template 3
+![Custom Template 3](./public/customTemplate_3.PNG)
+
 To apply one of the other templates, you just need to change the filename on the `--reporter-html-template` flag, within the `docker-compose.yml`.
 
 ---
