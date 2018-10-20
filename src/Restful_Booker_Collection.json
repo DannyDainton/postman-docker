@@ -16,9 +16,7 @@
 							"script": {
 								"id": "30d607f7-c915-4311-bd5f-8db21ff83749",
 								"exec": [
-									"pm.test('Content-Type header is correct', () => pm.response.to.have.header('Content-Type', 'text/plain; charset=utf-8'))",
-									"",
-									""
+									"pm.test('Content-Type header is correct', () => pm.response.to.have.header('Content-Type', 'text/plain; charset=utf-8'))"
 								],
 								"type": "text/javascript"
 							}
@@ -555,10 +553,6 @@
 							"        pm.expect(pm.response.json().additionalneeds).to.be.a('string')",
 							"});",
 							"}",
-							"",
-							"pm.test(\"Status code is 200\", () => {",
-							"    pm.response.to.have.status(200)",
-							"})",
 							"",
 							""
 						]
