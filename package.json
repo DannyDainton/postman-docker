@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "newman run -e ./src/environments/Restful_Booker_Environment.json --reporters cli,html --reporter-html-template ./src/templates/customTemplate_1.hbs --reporter-html-export ./src/reports/my_report.html ./src/Restful_Booker_Collection.json"
+    "test": "newman run -e ./src/Restful_Booker_Environment.json --reporters cli,html --reporter-html-template ./src/templates/customTemplate_1.hbs --reporter-html-export index.html ./src/Restful_Booker_Collection.json",
+    "serve:report":"http-server",
+    "deploy":"npm run test && npm run serve:report"
+
   },
   "author": "",
   "license": "ISC",

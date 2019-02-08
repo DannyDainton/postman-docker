@@ -1,4 +1,6 @@
-version: '3'
+version: '3'  
 services:
   newman_postman:
     build: .
+    ports: 
+      - "8080:8080"
