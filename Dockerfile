@@ -1,7 +1,6 @@
 FROM node:10.11.0-alpine
-
-RUN npm install -g newman newman-reporter-html
-
 WORKDIR /etc/newman
-
-ENTRYPOINT ["newman"]
+COPY package.json /etc/newman/package.json
+COPY src/ /etc/newman/src/
+RUN npm install
+CMD [ "npm","test" ]

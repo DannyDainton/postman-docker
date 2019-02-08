@@ -1,0 +1,15 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run -e ./src/environments/Restful_Booker_Environment.json --reporters cli,html --reporter-html-template ./src/templates/customTemplate_1.hbs --reporter-html-export ./src/reports/my_report.html ./src/Restful_Booker_Collection.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "4.3.1",
+    "newman-reporter-html": "1.0.2"
+  }
+}
