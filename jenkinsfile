@@ -1,15 +1,13 @@
-pipeline{
-    agent{
-        dockerfile true
+pipeline {
+  agent {
+    dockerfile true
+
+  }
+  stages {
+    stage('test') {
+      steps {
+        sh 'npm run deploy'
+      }
     }
-    stages{
-        stage('Test'){
-            steps{
-                def customImage = docker.build("newmanReport:${env.BUILD_ID}")
-                  customImage.inside {
-                     sh 'npm run deploy'
-                    }
-            }
-        }
-    }
+  }
 }
